@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/ground3D.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/ground3D.js"></script>
 </head>
 <body>
 <div id="target">
@@ -15,52 +16,7 @@
 
 
 <script type="text/javascript">
-var target="target";
-var count=12;
-var Z=500*count/12;
-var offset=0;
-var frame=$('<div class="ground3D">'+
-    '<div class="frame">'+
-    '</div>'+
-  '</div>').appendTo("#"+target);
-var roll=$('<div class="roll"></div>')
-frame.find(".frame").append(roll);
-for(var i=0;i<count;i++){
-  var point=$('<div class="point" point="'+i+'"></div>').appendTo(roll);
-}
-function run(){
-	var w=((Z*12)/(335*count))*181;
-	var l=(750-w)/2;
-	var b=-30*(count/12);
-	var h=660*(Math.sqrt(count)/Math.sqrt(12));
-	$(".point").each(function(){
-		var i=Number($(this).attr("point"));
-		var o=0;
-  var deg=(i*(360/count))+offset;
-  var oDeg=deg%360;
-  if(oDeg<0){
-	  oDeg+=360;
-	  }
-  if(oDeg>=90&&oDeg<=270){
-    o=1;
-  }
-  $(this).css({
-    "transform": "rotateY("+deg+"deg) translateZ("+Z+"px)",
-    "width":w+"px",
-    "opacity":o,
-    "background-position":-(i*w)+"px 0px",
-    "background-size": w*count+"px 100%",
-	"left":l+"px",
-	"bottom":b+"%",
-	"height":h+"px"
-  });
-		});
-	}
-	run();
-	var delay=setInterval(function(){
-		offset++;
-		//run();
-		},500);
+	var ground=new ground3D("target",30);
 </script>
 </body>
 </html>
