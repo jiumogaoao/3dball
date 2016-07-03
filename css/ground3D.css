@@ -1,7 +1,74 @@
-*{
-	margin:0px;}
+* {
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+  border: 0px;
+  box-sizing: border-box;
+  box-shadow: none;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none; }
+button{
+  display: block;
+  font-family: "Microsoft YaHei","HanHei SC","Arial";
+  cursor:pointer;
+  outline:none;
+  -webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+button:hover{
+  opacity: 0.5;
+}
+input,textarea{
+  font-family:"Microsoft YaHei","HanHei SC","Arial";
+  outline:none;
+  -webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+::-moz-focus-inner{border:0px;
+-webkit-tap-highlight-color:rgba(255,0,0,0);}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+color: #8ea7c8; 
+font-family:"Microsoft YaHei";
+font-size:25px;
+} 
+input:-moz-placeholder, textarea:-moz-placeholder { 
+color: #8ea7c8; 
+font-family:"Microsoft YaHei";
+font-size:25px;
+} 
+input::-moz-placeholder, textarea::-moz-placeholder { 
+color: #8ea7c8; 
+font-family:"Microsoft YaHei";
+font-size:25px;
+} 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+color: #8ea7c8; 
+font-family:"Microsoft YaHei";
+font-size:25px;
+} 
+img{
+  display:block;}
+html {
+  width: 750px;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  font-family:"Microsoft YaHei","HanHei SC";
+}
+.clear{
+  clear: both;
+}
+body {
+  width: 750px;
+  margin:auto;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  position: relative; 
+  background-color: #fff;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
 body,html,#target{
-	height:100%;}
+  width: 750px;
+	height:1334px;}
 .ground3D,.ground3D .frame{
   width: 750px;
   height: 1334px;
@@ -18,12 +85,12 @@ body,html,#target{
   float: left;
   transform-style: preserve-3d;
 }
-.ground3D .roll div {
+.ground3D .roll .point {
   position: absolute;
   height: 160%;
   bottom: -30%;
   background-color: blue;
-  background-image: url(../img/bg.jpg);
+  background-image: url(../img/bgA.jpg);
   background-repeat: no-repeat;
   background-size: auto 100%;
   transform-origin: 50% 50%;
@@ -32,4 +99,11 @@ body,html,#target{
     transition-duration: 1000ms;
     opacity: 1;
 }
-
+.ground3D .roll .point2 {
+  position: absolute;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 1000ms;
+    opacity: 1;
+}

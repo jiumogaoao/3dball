@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>仿ios滚轮</title>
+<title>3d空间</title>
 <link rel="stylesheet" type="text/css" href="css/ground3D.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/touch.js"></script>
@@ -17,6 +17,99 @@
 
 <script type="text/javascript">
 	var ground=new ground3D("target",30);
+	ground.set([
+			{
+				y:400,
+				r:0,
+				src:"img/01.png",
+				w:500,
+				name:"处女座"
+			},
+			{
+				y:-300,
+				r:30,
+				src:"img/02.png",
+				w:600,
+				name:"双子座"
+			},
+			{
+				y:600,
+				r:60,
+				src:"img/03.png",
+				w:400,
+				name:"山羊座"
+			},
+			{
+				y:800,
+				r:90,
+				src:"img/04.png",
+				w:600,
+				name:"魔蝎座"
+			},
+			{
+				y:100,
+				r:120,
+				src:"img/05.png",
+				w:550,
+				name:"天秤座"
+			},
+			{
+				y:900,
+				r:150,
+				src:"img/06.png",
+				w:400,
+				name:"人马座"
+			},
+			{
+				y:300,
+				r:180,
+				src:"img/07.png",
+				w:650,
+				name:"水瓶座"
+			},
+			{
+				y:600,
+				r:210,
+				src:"img/08.png",
+				w:500,
+				name:"金牛座"
+			},
+			{
+				y:-200,
+				r:240,
+				src:"img/09.png",
+				w:600,
+				name:"狮子座"
+			},
+			{
+				y:700,
+				r:270,
+				src:"img/10.png",
+				w:400,
+				name:"双鱼座"
+			},
+			{
+				y:100,
+				r:300,
+				src:"img/11.png",
+				w:500,
+				name:"天蝎座"
+			},
+			{
+				y:800,
+				r:330,
+				src:"img/12.png",
+				w:700,
+				name:"巨蟹座"
+			}
+		]);
+	ground.run();
+	$(document).on("swipeleft",function(){
+		ground.left();
+	});
+	$(document).on("swiperight",function(){
+		ground.right();
+	});
 </script>
 </body>
 </html>
